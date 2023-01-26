@@ -10,7 +10,7 @@ export default {
     components: { AppHeader, AppMain },
     methods: {
         showSearch(par) {
-            //API's call
+            //!!! API's call - not yet centralized
             axios.get(`${uri.base}${uri.sm}?api_key=${uri.apiKey}&query=${par}`)
                 .then((res) => {
                     store.movies = res.data.results;
