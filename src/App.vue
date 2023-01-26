@@ -3,10 +3,11 @@ import axios from 'axios'
 import { store } from './data/store';
 import { uri } from './data'
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 export default {
     name: 'App',
     data() { return { store } },
-    components: { AppHeader },
+    components: { AppHeader, AppMain },
     methods: {
         showSearch(par) {
             //API's call
@@ -25,4 +26,5 @@ export default {
 
 <template>
     <app-header @send="showSearch"></app-header>
+    <app-main></app-main>
 </template>
