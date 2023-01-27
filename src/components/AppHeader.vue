@@ -2,7 +2,7 @@
 import InputForm from './generics/InputForm.vue';
 export default {
     name: 'AppHeader',
-    data() { return { value: '' } },
+    data() { return { value: '', placeholder: 'cerca un titolo', btnText: 'CERCA' } },
     components: { InputForm },
     emits: ['submit'],
     methods: {
@@ -15,7 +15,7 @@ export default {
 <template>
     <header>
         <h1>BOOLFLIX</h1>
-        <input-form @submit="srcSubmit"></input-form>
+        <input-form @submit="srcSubmit" :placeholder="placeholder" :text="btnText"></input-form>
     </header>
 </template>
 <style>
