@@ -1,17 +1,21 @@
 <script>
+import InputSearch from './generics/InputSearch.vue';
 export default {
     name: 'AppHeader',
     data() { return { value: '' } },
-    emits: ['submit']
+    components: { InputSearch },
+    emits: ['submit'],
+    methods: {
+        srcSubmit(par) {
+            this.$emit('submit', par)
+        }
+    }
 }
 </script>
 <template>
     <header>
         <h1>BOOLFLIX</h1>
-        <form @submit.prevent="$emit('submit', value)">
-            <input type="text" v-model="value">
-            <button>SEARCH</button>
-        </form>
+        <input-search @submit="srcSubmit"></input-search>
     </header>
 </template>
 <style>
