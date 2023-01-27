@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'InputSearch',
+    name: 'InputForm',
     data() { return { value: '' } },
     emits: ['submit']
 }

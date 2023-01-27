@@ -1,9 +1,9 @@
 <script>
-import InputSearch from './generics/InputSearch.vue';
+import InputForm from './generics/InputForm.vue';
 export default {
     name: 'AppHeader',
     data() { return { value: '' } },
-    components: { InputSearch },
+    components: { InputForm },
     emits: ['submit'],
     methods: {
         srcSubmit(par) {
@@ -15,7 +15,7 @@ export default {
 <template>
     <header>
         <h1>BOOLFLIX</h1>
-        <input-search @submit="srcSubmit"></input-search>
+        <input-form @submit="srcSubmit"></input-form>
     </header>
 </template>
 <style>
