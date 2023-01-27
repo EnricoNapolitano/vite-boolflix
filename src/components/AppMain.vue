@@ -6,11 +6,14 @@ export default {
 }
 </script>
 <template>
-    <div>
+    <div v-if="!movies">
+        Cerca un titolo
+    </div>
+    <section v-else class="medias-section">
         <h2>MOVIES</h2>
         <media-card v-for="movie in movies" :item="movie"></media-card>
         <hr>
         <h2>SERIES</h2>
         <media-card v-for="tvShow in tvShows" :item="tvShow"></media-card>
-    </div>
+    </section>
 </template>
