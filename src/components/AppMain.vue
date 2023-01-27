@@ -6,7 +6,7 @@ export default {
 }
 </script>
 <template>
-    <div v-if="!movies">
+    <div v-if="!movies && !tvShows">
         Cerca un titolo
     </div>
     <section v-else class="medias-section">
