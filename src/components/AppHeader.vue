@@ -6,6 +6,9 @@ export default {
     components: { InputForm },
     emits: ['submit', 'type'],
     methods: {
+
+        /*sending through emits the actions 'submit' and
+        'keyup' (with relative's value) to App */
         srcSubmit() {
             this.$emit('submit')
         },
