@@ -4,10 +4,13 @@ export default {
     name: 'AppHeader',
     data() { return { value: '', placeholder: 'cerca un titolo', btnText: 'CERCA' } },
     components: { InputForm },
-    emits: ['submit'],
+    emits: ['submit', 'type'],
     methods: {
-        srcSubmit(par) {
-            this.$emit('submit', par)
+        srcSubmit() {
+            this.$emit('submit')
+        },
+        onTyping(value) {
+            this.$emit('type', value)
         }
     }
 }
@@ -15,7 +18,7 @@ export default {
 <template>
     <header>
         <h1>BOOLFLIX</h1>
-        <input-form @submit="srcSubmit" :placeholder="placeholder" :text="btnText"></input-form>
+        <input-form @submit="srcSubmit" @type="onTyping" :placeholder="placeholder" :text="btnText"></input-form>
     </header>
 </template>
 <style>
