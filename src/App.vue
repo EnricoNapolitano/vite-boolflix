@@ -25,6 +25,6 @@ export default {
 </script>
 
 <template>
-    <app-header @send="showSearch"></app-header>
-    <app-main></app-main>
+    <app-header @submit="showSearch"></app-header>
+    <app-main :movies="store.movies" :tvShows="store.tvShows"></app-main>
 </template>
