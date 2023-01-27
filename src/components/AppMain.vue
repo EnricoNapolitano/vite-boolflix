@@ -1,16 +1,16 @@
 <script>
-import InfoCard from './InfoCard.vue';
+import MediaCard from './MediaCard.vue';
 export default {
     props: { movies: Array, tvShows: Array },
-    components: { InfoCard }
+    components: { MediaCard }
 }
 </script>
 <template>
     <div>
         <h2>MOVIES</h2>
-        <info-card v-for="movie in movies" :item="movie" :isMovie="true"></info-card>
+        <media-card v-for="movie in movies" :item="movie" :isMovie="true"></media-card>
         <hr>
         <h2>SERIES</h2>
-        <info-card v-for="tvShow in tvShows" :item="tvShow" :isMovie="false"></info-card>
+        <media-card v-for="tvShow in tvShows" :item="tvShow" :isMovie="false"></media-card>
     </div>
 </template>
