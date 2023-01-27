@@ -8,6 +8,7 @@ export default {
     data() { return { movies: null, tvShows: null, searchedWords: null } },
     components: { AppHeader, AppMain },
     computed: {
+        //following computed has to be inserted in axios
         axiosConfig() {
             return {
                 params: {
@@ -18,14 +19,19 @@ export default {
         }
     },
     methods: {
+        //generic call to an endpoint
         fetchApi(endpoint, collection) {
             if (!this.searchedWords) return;
             axios.get(`${uri.base}/${endpoint}`, this.axiosConfig)
                 .then(res => { this[collection] = res.data.results; });
         },
+
+        //dinamic query
         updateSearchedWords(words) {
             this.searchedWords = words;
         },
+
+        //APIs' call to movies list and series list 
         searchMedia() {
             this.fetchApi('search/movie', 'movies');
             this.fetchApi('search/tv', 'tvShows')
