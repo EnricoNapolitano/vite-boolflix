@@ -2,13 +2,13 @@
 export default {
     name: 'AppHeader',
     data() { return { value: '' } },
-    emits: ['send']
+    emits: ['submit']
 }
 </script>
 <template>
     <header>
         <h1>BOOLFLIX</h1>
-        <form @submit.prevent="$emit('send', value)">
+        <form @submit.prevent="$emit('submit', value)">
             <input type="text" v-model="value">
             <button>SEARCH</button>
         </form>
