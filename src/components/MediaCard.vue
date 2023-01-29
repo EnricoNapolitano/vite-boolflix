@@ -4,6 +4,8 @@ export default {
         item: { type: Object },
     },
     computed: {
+
+        //*** TITLES ***
         title() {
             return this.item.title || this.item.name
         },
@@ -13,6 +15,9 @@ export default {
         isSameTitle() {
             return this.title === this.originalTitle
         },
+
+
+        //*** */ SPOKEN LANGUAGE IN MOVIE/SHOW ***
         hasFlag() {
             const lang = ['it', 'en'];
             return lang.includes(this.item.original_language)
@@ -22,12 +27,19 @@ export default {
             const img = this.item.original_language;
             return new URL(`../assets/img/${img}.png`, import.meta.url).href
         },
+
+
+        //*** */ BACKGROUND IMAGE FOR MOVIE/SHOW ***
         backdropImg() {
             //building URL image
             const baseImgUrl = 'https://image.tmdb.org/t/p/w500';
             return baseImgUrl + this.item.backdrop_path
         },
+
+
+        //*** */ SYSTEM OF RATING ***
         rating() {
+            //rating expressed in fifths
             return this.item.vote_average * 5
         },
         numFullStars() {
