@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/questrial": "^4.5.11",
     "axios": "^1.2.5",
     "vue": "^3.2.45"
   },
