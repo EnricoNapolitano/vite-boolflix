@@ -17,7 +17,7 @@ export default {
         },
 
 
-        //*** */ SPOKEN LANGUAGE IN MOVIE/SHOW ***
+        //*** SPOKEN LANGUAGE IN MOVIE/SHOW ***
         hasFlag() {
             const lang = ['it', 'en'];
             return lang.includes(this.item.original_language)
@@ -29,7 +29,7 @@ export default {
         },
 
 
-        //*** */ BACKGROUND IMAGE FOR MOVIE/SHOW ***
+        //*** BACKGROUND IMAGE FOR MOVIE/SHOW ***
         backdropImg() {
             //building URL image
             const baseImgUrl = 'https://image.tmdb.org/t/p/w500';
@@ -37,7 +37,7 @@ export default {
         },
 
 
-        //*** */ SYSTEM OF RATING ***
+        //*** SYSTEM OF RATING ***
         rating() {
             //rating expressed in fifths
             return this.item.vote_average * 5
