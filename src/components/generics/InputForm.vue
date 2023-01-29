@@ -12,3 +12,32 @@ export default {
         <button> {{ text || 'INVIA' }}</button>
     </form>
 </template>
+
+<style lang="scss" scoped>
+@use '../../assets/scss/partials/variables' as*;
+
+input {
+    width: 300px;
+    height: 30px;
+    padding-left: 20px;
+    border: 1px solid white;
+}
+
+button {
+    height: 30px;
+    margin: 10px;
+
+    font-weight: 900;
+
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+
+    cursor: pointer;
+
+    &:active {
+        background-color: white;
+        color: $black;
+    }
+}
+</style>
