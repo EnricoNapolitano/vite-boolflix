@@ -45,3 +45,7 @@ export default {
     <app-header @submit="searchMedia" @type="updateSearchedWords"></app-header>
     <app-main :movies="movies" :tvShows="tvShows"></app-main>
 </template>
+
+<style lang="scss">
+@use './assets/scss/style.scss';
+</style>
