@@ -20,14 +20,34 @@ export default {
 </script>
 <template>
     <header>
-        <h1>BOOLFLIX</h1>
-        <input-form @submit="srcSubmit" @type="onTyping" :placeholder="placeholder" :text="btnText"></input-form>
+        <div class="container">
+            <h1><a href="#">BOOLFLIX</a></h1>
+            <input-form @submit="srcSubmit" @type="onTyping" :placeholder="placeholder" :text="btnText"></input-form>
+        </div>
     </header>
 </template>
-<style>
+<style lang="scss">
+@use '../assets/scss/partials/variables' as*;
+
 header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    background-color: black;
+
+    position: sticky;
+
+    h1 {
+        a {
+            color: $red;
+            cursor: pointer;
+        }
+    }
+
+    div {
+        margin: 0 auto;
+        height: 55px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 </style>
