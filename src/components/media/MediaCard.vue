@@ -77,17 +77,15 @@ export default {
 <style lang="scss">
 @use '../../assets/scss/partials/variables' as*;
 
-article {
-    color: $light-grey;
-    padding: 2px;
-}
-
 .flag {
     width: 30px;
     height: auto;
 }
 
 article {
+    color: $light-grey;
+    padding: 2px;
+
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;

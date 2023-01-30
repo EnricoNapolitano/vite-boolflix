@@ -24,7 +24,6 @@ export default {
 
 hr {
     margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 h2 {
