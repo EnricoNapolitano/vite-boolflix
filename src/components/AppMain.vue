@@ -1,17 +1,20 @@
 <script>
 import PlaceHolder from './PlaceHolder.vue';
-import MediaSections from './MediaSections.vue'
+import MediaSection from './media/MediaSection.vue';
 export default {
     name: 'AppMain',
     props: { movies: Array, tvShows: Array },
-    components: { PlaceHolder, MediaSections },
+    components: { PlaceHolder, MediaSection },
 }
 </script>
 <template>
     <main>
         <div class="container">
             <place-holder v-if="!movies && !tvShows"></place-holder>
-            <media-sections v-else :movies="movies" :tvShows="tvShows"></media-sections>
+            <div v-else>
+                <media-section collection="movies" title="Film"></media-section>
+                <media-section collection="tvShows" title="Serie"></media-section>
+            </div>
         </div>
     </main>
 </template>

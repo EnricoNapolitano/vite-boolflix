@@ -1,11 +1,12 @@
 <script>
 import axios from 'axios'
+import { store } from './data/store'
 import { uri } from './data'
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 export default {
     name: 'App',
-    data() { return { movies: null, tvShows: null, searchedWords: null } },
+    data() { return { store, searchedWords: null } },
     components: { AppHeader, AppMain },
     computed: {
         //following computed has to be inserted in axios
@@ -24,7 +25,7 @@ export default {
         fetchApi(endpoint, collection) {
             if (!this.searchedWords) return;
             axios.get(`${uri.base}/${endpoint}`, this.axiosConfig)
-                .then(res => { this[collection] = res.data.results; });
+                .then(res => { store[collection] = res.data.results; });
         },
 
         //dinamic query
@@ -44,7 +45,7 @@ export default {
 
 <template>
     <app-header @submit="searchMedia" @type="updateSearchedWords"></app-header>
-    <app-main :movies="movies" :tvShows="tvShows"></app-main>
+    <app-main :movies="store.movies" :tvShows="store.tvShows"></app-main>
 </template>
 
 <style lang="scss">

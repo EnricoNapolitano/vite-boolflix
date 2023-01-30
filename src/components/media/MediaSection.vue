@@ -1,28 +1,26 @@
 <script>
+import { store } from '../../data/store';
 import MediaCard from './MediaCard.vue';
 export default {
-    name: 'MediaSections',
-    props: { movies: Array, tvShows: Array },
+    name: 'MediaSection',
+    data() { return { store } },
+    props: { collection: String, title: String, movies: Array, tvShows: Array },
     components: { MediaCard }
 }
 </script>
 
 <template>
-    <div class="medias-section">
-        <h2 class="wrap">FILM</h2>
+    <section :id="collection">
+        <h2 class="wrap">{{ title }}</h2>
         <div class="media-card">
-            <media-card v-for="movie in movies" :item="movie"></media-card>
+            <media-card v-for="video in store[collection]" :item="video"></media-card>
         </div>
         <hr class="wrap">
-        <h2 class="wrap">SERIE</h2>
-        <div class="media-card">
-            <media-card v-for="tvShow in tvShows" :item="tvShow"></media-card>
-        </div>
-    </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables' as*;
+@use '../../assets/scss/partials/variables' as*;
 
 hr {
     margin-top: 50px;

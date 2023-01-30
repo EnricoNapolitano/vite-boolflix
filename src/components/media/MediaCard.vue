@@ -26,7 +26,7 @@ export default {
         flagImgPath() {
             //building the image path
             const img = this.item.original_language;
-            return new URL(`../assets/img/${img}.png`, import.meta.url).href
+            return new URL(`../../assets/img/${img}.png`, import.meta.url).href
         },
 
 
@@ -35,7 +35,7 @@ export default {
             //building URL image
             const baseImgUrl = 'https://image.tmdb.org/t/p/w342';
             const endpoint = baseImgUrl + this.item.backdrop_path;
-            const undefined = new URL(`../assets/img/undefined.png`, import.meta.url).href
+            const undefined = new URL(`../../assets/img/undefined.png`, import.meta.url).href
 
             return !this.item.backdrop_path ? undefined : endpoint;
         }
@@ -75,7 +75,7 @@ export default {
 </template>
 
 <style lang="scss">
-@use '../assets/scss/partials/variables' as*;
+@use '../../assets/scss/partials/variables' as*;
 
 article {
     color: $light-grey;
