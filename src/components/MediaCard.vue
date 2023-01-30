@@ -34,7 +34,10 @@ export default {
         backdropImg() {
             //building URL image
             const baseImgUrl = 'https://image.tmdb.org/t/p/w342';
-            return baseImgUrl + this.item.backdrop_path
+            const endpoint = baseImgUrl + this.item.backdrop_path;
+            const undefined = new URL(`../assets/img/undefined.png`, import.meta.url).href
+
+            return !this.item.backdrop_path ? undefined : endpoint;
         },
 
 
@@ -102,6 +105,7 @@ article {
     display: none;
 
     min-height: 194px;
+    min-width: 344px;
     padding: 20px;
 
     text-shadow: 2px 2px $black;
