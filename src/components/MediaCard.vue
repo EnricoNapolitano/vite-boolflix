@@ -57,24 +57,23 @@ export default {
     <article>
         <figure>
             <img :src="backdropImg" alt="backdrop image">
-            <div class="overlay">
-                <h3 v-if="isSameTitle">{{ title }}</h3>
-                <div v-else>
-                    <h3>{{ title }}</h3>
-                    <h4>{{ originalTitle }}</h4>
-                </div>
-                <div class="language">
-                    <p v-if="!hasFlag">{{ item.original_language }}</p>
-                    <img class="flag" v-else :src="flagImgPath" :alt="item.original_language">
-                </div>
-                <div class="rating">
-                    <i v-for="star in numFullStars" class="fa-solid fa-star"></i>
-                    <i v-for="star in numEmptyStars" class="fa-regular fa-star"></i>
-                </div>
-                <p>{{ item.overview }}</p>
-            </div>
         </figure>
-
+        <div class="overlay">
+            <h3 v-if="isSameTitle">{{ title }}</h3>
+            <div v-else>
+                <h3>{{ title }}</h3>
+                <h4>{{ originalTitle }}</h4>
+            </div>
+            <div class="rating">
+                <i v-for="star in numFullStars" class="fa-solid fa-star"></i>
+                <i v-for="star in numEmptyStars" class="fa-regular fa-star"></i>
+            </div>
+            <div class="language">
+                <p v-if="!hasFlag">{{ item.original_language }}</p>
+                <img class="flag" v-else :src="flagImgPath" :alt="item.original_language">
+            </div>
+            <p class="overview">{{ item.overview }}</p>
+        </div>
     </article>
 </template>
 
@@ -83,11 +82,57 @@ export default {
 
 article {
     color: $light-grey;
-    display: flex;
+    padding: 2px;
 }
 
 .flag {
     width: 30px;
     height: auto;
+}
+
+article {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: transform ease 0.6s;
+}
+
+.overlay {
+    display: none;
+
+    min-height: 194px;
+    padding: 20px;
+
+    text-shadow: 2px 2px $black;
+    background-color: rgba($color: $black, $alpha: 0.9);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rating {
+    padding-top: 8px;
+}
+
+.language {
+    padding-top: 15px;
+}
+
+.overview {
+    line-height: 18px;
+    padding-top: 5px;
+}
+
+// HOVER
+article:hover {
+    transform: scale(1.5);
+    margin: 0 100px;
+    z-index: 1;
+}
+
+article:hover .overlay {
+    display: block;
 }
 </style>
