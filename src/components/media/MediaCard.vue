@@ -66,7 +66,8 @@ export default {
                 <font-awesome-icon v-for="num in 5" :icon="rating(num)"></font-awesome-icon>
             </div>
             <div class="language">
-                <p v-if="!hasFlag">{{ item.original_language }}</p>
+                <span class="pr-5">LINGUA</span>
+                <span v-if="!hasFlag">{{ item.original_language }}</span>
                 <img class="flag" v-else :src="flagImgPath" :alt="item.original_language">
             </div>
             <p class="overview">{{ item.overview }}</p>
