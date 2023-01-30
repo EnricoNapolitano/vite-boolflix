@@ -14,7 +14,7 @@ export default {
             return this.item.original_title || this.item.original_name
         },
         isSameTitle() {
-            return this.title === this.originalTitle
+            return this.title.toLowerCase() === this.originalTitle.toLowerCase()
         },
 
 
