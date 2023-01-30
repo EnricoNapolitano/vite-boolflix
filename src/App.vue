@@ -13,7 +13,8 @@ export default {
             return {
                 params: {
                     api_key: uri.apiKey,
-                    query: this.searchedWords
+                    query: this.searchedWords,
+                    language: 'it-IT'
                 }
             }
         }
