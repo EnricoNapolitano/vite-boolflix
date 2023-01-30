@@ -38,19 +38,14 @@ export default {
             const undefined = new URL(`../assets/img/undefined.png`, import.meta.url).href
 
             return !this.item.backdrop_path ? undefined : endpoint;
-        },
-
-
-        //*** SYSTEM OF RATING ***
-        rating() {
+        }
+    },
+    methods: {
+        rating(num) {
             //rating expressed in fifths
-            return this.item.vote_average * 5
-        },
-        numFullStars() {
-            return Math.ceil(this.rating / 10)
-        },
-        numEmptyStars() {
-            return Math.ceil(4 - (this.rating / 10))
+            const vote = Math.ceil(this.item.vote_average / 2);
+            const star = num < vote ? 'fa-solid' : 'fa-regular';
+            return star + ' fa-star'
         }
     }
 }
@@ -68,8 +63,7 @@ export default {
                 <h4>{{ originalTitle }}</h4>
             </div>
             <div class="rating">
-                <i v-for="star in numFullStars" class="fa-solid fa-star"></i>
-                <i v-for="star in numEmptyStars" class="fa-regular fa-star"></i>
+                <i v-for="num in 5" :class="rating(num)"></i>
             </div>
             <div class="language">
                 <p v-if="!hasFlag">{{ item.original_language }}</p>
