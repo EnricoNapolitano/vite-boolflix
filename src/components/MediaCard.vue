@@ -63,7 +63,7 @@ export default {
                 <h4>{{ originalTitle }}</h4>
             </div>
             <div class="rating">
-                <i v-for="num in 5" :class="rating(num)"></i>
+                <font-awesome-icon v-for="num in 5" :icon="rating(num)"></font-awesome-icon>
             </div>
             <div class="language">
                 <p v-if="!hasFlag">{{ item.original_language }}</p>
@@ -92,7 +92,9 @@ article {
     overflow-y: auto;
     overflow-x: hidden;
 
-    transition: transform ease 0.6s;
+    cursor: pointer;
+
+    transition: transform ease 0.3s;
 }
 
 .overlay {
