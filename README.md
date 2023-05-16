@@ -1,6 +1,7 @@
 # Boolflix
 Boolflix is a personalized replica of Netflix, featuring some modifications. In this project, I have utilized various dependencies such as Sass, Vue, Axios (and Vite as a dev dependency). By making an Axios call to the Movie DB API, I fetch a comprehensive list of movies available on their platform. This approach allows users to access detailed information associated with each movie.
-<br>
+
+
 <img src="preview.png">
 <img src="preview-2.png">
 
